@@ -211,3 +211,37 @@ public class Run2 {
 
 
 ```
+
+
+## 文件输出配置 logs/logFile.log
+
+```aidl
+<configuration>
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/testFile.log</file>
+        <append>true</append>
+
+
+        <encoder>
+            <!--
+             %d   输出日志时间点的日期或时间，默认格式为ISO8601，也可以在其后指定格式，比如：%d{yyy MMM dd HH:mm:ss,SSS}，
+                 输出类似：2002年10月18日 22：10：28，921
+             %p   输出优先级，即DEBUG，INFO，WARN，ERROR，FATAL
+             %c   输出所属的类目，通常就是所在类的全名
+             %l 输出日志事件的发生位置，包括类目名、发生的线程，以及在代码中的行数。举例：Testlog4.main(TestLog4.java:10)
+             %t 输出产生该日志事件的线程名
+             %m 输出代码中指定的消息
+             %n 输出一个回车换行符，Windows平台为“\r\n”，Unix平台为“\n”
+             -->
+            <pattern>%d{HH:mm:ss,SSS} [%p][%c][%t]%L -> %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="DEBUG">
+        <appender-ref ref="FILE" />
+    </root>
+</configuration>
+
+
+```
