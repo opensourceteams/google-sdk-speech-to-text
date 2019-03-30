@@ -1,5 +1,7 @@
 # google sdk speech-to-text
 
+## Java 流式和非流式语音识别示例(官网示例)
+- https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/speech
 
 ### google speech-to-text
 - https://github.com/opensourceteams/google-sdk-speech-to-text/blob/master/md/languages.md

@@ -2,8 +2,6 @@ package com.opensourceteams.module.google.speech.to.text.simple;
 
 import com.google.cloud.speech.v1p1beta1.*;
 import com.google.protobuf.ByteString;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -23,7 +21,6 @@ import java.util.List;
 public class SpeechToTextRun {
 
 
-    private static Log log = LogFactory.getLog(SpeechToTextRun.class);
 
     /**
      * Demonstrates using the Speech API to transcribe an audio file.
@@ -31,7 +28,6 @@ public class SpeechToTextRun {
     public static void main(String... args) throws Exception {
 
 
-        log.info("开始");
         // Instantiates a client
 
         try (SpeechClient speechClient = SpeechClient.create()) {
@@ -67,6 +63,5 @@ public class SpeechToTextRun {
             }
         }
 
-        log.info("结束");
     }
 }
