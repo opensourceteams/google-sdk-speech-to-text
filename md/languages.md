@@ -9,10 +9,6 @@
 
 - Speech-to-Text 可以识别以下语言的语音。
 ```aidl
-
-
-
-
 语言	languageCode	语言（中文名称）
 Afrikaans (Suid-Afrika)	af-ZA	南非荷兰语（南非）
 አማርኛ (ኢትዮጵያ)	am-ET	阿姆哈拉语（埃塞俄比亚）
