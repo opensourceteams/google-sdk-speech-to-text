@@ -1,7 +1,15 @@
+# google 语音转文本(短语音)
+- 语音文件小于60秒
+- 将语音转化成文本
+
+## 源码
+- https://github.com/opensourceteams/google-sdk-speech-to-text
+
+### 调用示例
+```aidl
 package com.opensourceteams.module.google.speech.to.text.simple;
 
 import com.google.cloud.speech.v1p1beta1.*;
-import com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding;
 import com.google.protobuf.ByteString;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -21,10 +29,10 @@ import java.util.List;
  * English (Great Britain)	en-GB	英语（英国）
  * English (United States)	en-US	英语（美国）
  */
-public class SpeechToTextRun2 {
+public class SpeechToTextRun {
 
 
-    private static Log log = LogFactory.getLog(SpeechToTextRun2.class);
+    private static Log log = LogFactory.getLog(SpeechToTextRun.class);
 
     /**
      * Demonstrates using the Speech API to transcribe an audio file.
@@ -38,8 +46,7 @@ public class SpeechToTextRun2 {
         try (SpeechClient speechClient = SpeechClient.create()) {
 
             // The path to the audio file to transcribe
-           // String fileName = "/Users/liuwen/Downloads/temp/语音测试文件/录音-20秒.wav";
-            String fileName = "/Users/liuwen/Downloads/temp/语音测试文件/录音-30秒.wav";
+            String fileName = "data/wav/早饭吃西红柿炒鸡蛋.wav";
 
             // Reads the audio file into memory
             Path path = Paths.get(fileName);
@@ -72,3 +79,8 @@ public class SpeechToTextRun2 {
         log.info("结束");
     }
 }
+```
+### 结果
+```aidl
+早饭吃西红柿炒鸡蛋
+```

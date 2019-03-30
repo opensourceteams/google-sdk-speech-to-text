@@ -1,3 +1,12 @@
+# google 语音转文本(带时间戳)
+- 将语音拆成一个一个字(中文)，单词(英文)
+- 每个字或单词带上开始时间和结束时间
+
+## 源码
+- https://github.com/opensourceteams/google-sdk-speech-to-text
+
+### 调用示例
+```aidl
 package com.opensourceteams.module.google.speech.to.text.simple;
 
 import com.google.cloud.speech.v1p1beta1.*;
@@ -20,10 +29,10 @@ import java.util.List;
  * English (Great Britain)	en-GB	英语（英国）
  * English (United States)	en-US	英语（美国）
  */
-public class SpeechToTextRun {
+public class SpeechToTextTimeRun {
 
 
-    private static Log log = LogFactory.getLog(SpeechToTextRun.class);
+    private static Log log = LogFactory.getLog(SpeechToTextTimeRun.class);
 
     /**
      * Demonstrates using the Speech API to transcribe an audio file.
@@ -37,6 +46,7 @@ public class SpeechToTextRun {
         try (SpeechClient speechClient = SpeechClient.create()) {
 
             // The path to the audio file to transcribe
+           // String fileName = "/Users/liuwen/Downloads/temp/语音测试文件/录音-20秒.wav";
             String fileName = "data/wav/早饭吃西红柿炒鸡蛋.wav";
 
             // Reads the audio file into memory
@@ -49,6 +59,7 @@ public class SpeechToTextRun {
                     //.setEncoding(AudioEncoding.LINEAR16)
                     //.setSampleRateHertz(16000)
                     .setLanguageCode("cmn-Hans-CN")
+                    .setEnableWordTimeOffsets(true)
                     .build();
             RecognitionAudio audio = RecognitionAudio.newBuilder()
                     .setContent(audioBytes)
@@ -64,9 +75,56 @@ public class SpeechToTextRun {
                 SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
                 //System.out.printf("Transcription: %s%n", alternative.getTranscript());
                 System.out.println(alternative.getTranscript());
+
+
+                System.out.println("开始时间戳");
+                for(com.google.cloud.speech.v1p1beta1.WordInfo wordInfo : alternative.getWordsList()){
+
+                    System.out.println(wordInfo.getWord());
+                    System.out.printf(
+                            "\t%s.%s sec - %s.%s sec\n",
+                            wordInfo.getStartTime().getSeconds(),
+                            wordInfo.getStartTime().getNanos() / 1000000,
+                            wordInfo.getEndTime().getSeconds(),
+                            wordInfo.getEndTime().getNanos() / 1000000);
+
+                    System.out.println();
+                }
+
+
             }
         }
 
         log.info("结束");
     }
 }
+```
+### 结果
+```aidl
+早
+	0.0 sec - 0.800 sec
+
+饭
+	0.800 sec - 1.200 sec
+
+吃
+	1.200 sec - 1.500 sec
+
+西
+	1.500 sec - 2.0 sec
+
+红
+	2.0 sec - 2.400 sec
+
+柿
+	2.400 sec - 2.700 sec
+
+炒
+	2.700 sec - 3.200 sec
+
+鸡
+	3.200 sec - 3.600 sec
+
+蛋
+	3.600 sec - 3.800 sec
+```

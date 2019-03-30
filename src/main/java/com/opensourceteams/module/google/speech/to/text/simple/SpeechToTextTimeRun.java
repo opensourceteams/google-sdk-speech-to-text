@@ -20,10 +20,10 @@ import java.util.List;
  * English (Great Britain)	en-GB	英语（英国）
  * English (United States)	en-US	英语（美国）
  */
-public class SpeechToTextRun {
+public class SpeechToTextTimeRun {
 
 
-    private static Log log = LogFactory.getLog(SpeechToTextRun.class);
+    private static Log log = LogFactory.getLog(SpeechToTextTimeRun.class);
 
     /**
      * Demonstrates using the Speech API to transcribe an audio file.
@@ -37,6 +37,7 @@ public class SpeechToTextRun {
         try (SpeechClient speechClient = SpeechClient.create()) {
 
             // The path to the audio file to transcribe
+           // String fileName = "/Users/liuwen/Downloads/temp/语音测试文件/录音-20秒.wav";
             String fileName = "data/wav/早饭吃西红柿炒鸡蛋.wav";
 
             // Reads the audio file into memory
@@ -49,6 +50,7 @@ public class SpeechToTextRun {
                     //.setEncoding(AudioEncoding.LINEAR16)
                     //.setSampleRateHertz(16000)
                     .setLanguageCode("cmn-Hans-CN")
+                    .setEnableWordTimeOffsets(true)
                     .build();
             RecognitionAudio audio = RecognitionAudio.newBuilder()
                     .setContent(audioBytes)
@@ -64,6 +66,23 @@ public class SpeechToTextRun {
                 SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
                 //System.out.printf("Transcription: %s%n", alternative.getTranscript());
                 System.out.println(alternative.getTranscript());
+
+
+                System.out.println("开始时间戳");
+                for(com.google.cloud.speech.v1p1beta1.WordInfo wordInfo : alternative.getWordsList()){
+
+                    System.out.println(wordInfo.getWord());
+                    System.out.printf(
+                            "\t%s.%s sec - %s.%s sec\n",
+                            wordInfo.getStartTime().getSeconds(),
+                            wordInfo.getStartTime().getNanos() / 1000000,
+                            wordInfo.getEndTime().getSeconds(),
+                            wordInfo.getEndTime().getNanos() / 1000000);
+
+                    System.out.println();
+                }
+
+
             }
         }
 
