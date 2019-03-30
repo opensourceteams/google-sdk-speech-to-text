@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.opensourceteams</groupId>
-  <artifactId>logback</artifactId>
+  <artifactId>google-sdk-speech-to-text</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>logback</name>
+  <name>google-sdk-speech-to-text</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -16,39 +16,19 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <project.logback.version>1.2.3</project.logback.version>
+
   </properties>
 
   <dependencies>
 
 
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>1.7.26</version>
-    </dependency>
 
 
     <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-core</artifactId>
-      <version>${project.logback.version}</version>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-speech</artifactId>
+      <version>0.61.0-beta</version>
     </dependency>
-
-    <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-classic</artifactId>
-      <version>${project.logback.version}</version>
-      <scope>test</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-access</artifactId>
-      <version>${project.logback.version}</version>
-    </dependency>
-
-
 
 
     <dependency>
