@@ -1,6 +1,7 @@
 # google 语音转文本(异步短语音)
 - 语音转文本
 - 异步调用
+- 同步识别请求仅限于持续时间不超过 1 分钟的音频数据，异步请求可用于任何持续时间不超过 180 分钟的音频数据
 
 ## 源码
 - https://github.com/opensourceteams/google-sdk-speech-to-text
