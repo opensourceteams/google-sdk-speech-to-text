@@ -35,7 +35,7 @@ public class SpeechToTextAsyncRun {
         try (SpeechClient speechClient = SpeechClient.create()) {
 
             // The path to the audio file to transcribe
-            String fileName = "data/wav/早饭吃西红柿炒鸡蛋.wav";
+            String fileName = "data/wav/cn/早饭吃西红柿炒鸡蛋.wav";
 
             // Reads the audio file into memory
             Path path = Paths.get(fileName);
