@@ -4,6 +4,8 @@
 
 ## 语言支持
 - Cloud Speech-to-Text 使用可读懂多种语言之一的语音识别引擎。这些语言是在识别请求的 languageCode 参数中指定的。每个语言代码参数都包含一个 BCP-47 标识符。这些标记通常采用“language-region”的格式，其中“language”是指主要语言，“region”是指特定方言的区域（通常是国家/地区标识符）。例如，英语可以用美国英语 (en-US) 或英国英语 (en-GB) 表示。
+- 美国英语 (en-US) 或英国英语 (en-GB)
+- 普通话 (中国大陆)	cmn-Hans-CN	中文、普通话（中国简体）
 
 
 

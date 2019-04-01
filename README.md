@@ -28,3 +28,6 @@
 
 ### google 语音转文本自动加标点符号(短语音)
 - https://github.com/opensourceteams/google-sdk-speech-to-text/blob/master/md/Google_Gnome.wav
+
+### google 通过流的方式发送语音文件转文本
+-  https://github.com/opensourceteams/google-sdk-speech-to-text/blob/master/md/speech-text-steam.md

@@ -3,11 +3,14 @@ package com.opensourceteams.module.google.speech.to.text.simple;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.speech.v1p1beta1.*;
 import com.google.protobuf.ByteString;
+import org.apache.log4j.Logger;
+
 
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+
 
 
 /**
@@ -22,6 +25,8 @@ import java.util.List;
 public class SpeechToTextAsyncRun {
 
 
+    static Logger logger = Logger.getLogger(SpeechToTextAsyncRun.class);
+
 
     /**
      * Demonstrates using the Speech API to transcribe an audio file.
@@ -30,10 +35,12 @@ public class SpeechToTextAsyncRun {
     public static void main(String... args) throws Exception {
 
 
+
         // Instantiates a client
 
         try (SpeechClient speechClient = SpeechClient.create()) {
 
+            logger.info("开始处理");
             // The path to the audio file to transcribe
             String fileName = "data/wav/cn/早饭吃西红柿炒鸡蛋.wav";
 
@@ -59,8 +66,8 @@ public class SpeechToTextAsyncRun {
 
 
             while (!response.isDone()) {
-                System.out.println("Waiting for response...");
-                Thread.sleep(10000);
+                logger.info("正在等待服务端响应...");
+                Thread.sleep(1 * 1000);
             }
 
             List<SpeechRecognitionResult> results = response.get().getResultsList();
@@ -70,6 +77,7 @@ public class SpeechToTextAsyncRun {
                 // first (most likely) one here.
                 SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
                 System.out.printf("Transcription: %s%n", alternative.getTranscript());
+                logger.info("解析结果:" + alternative.getTranscript());
             }
         }
 
