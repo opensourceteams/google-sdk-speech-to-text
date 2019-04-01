@@ -31,3 +31,6 @@
 
 ### google 通过流的方式发送语音文件转文本
 -  https://github.com/opensourceteams/google-sdk-speech-to-text/blob/master/md/speech-text-steam.md
+
+### google 通过流的方式发送语音(直接用电脑上的麦克风说话)
+- https://github.com/opensourceteams/google-sdk-speech-to-text/blob/master/md/speech-text-micsteam.md

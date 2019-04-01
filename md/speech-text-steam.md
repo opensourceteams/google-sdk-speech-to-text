@@ -127,8 +127,8 @@ public class RunCN {
 
 ### 输出结果
 ```aidl
-2019-04-01 10:01:15,926 INFO [com.opensourceteams.module.google.speech.to.text.simple.streamingRecognizeFile.RunCN] - 开始
+2019-04-01 10:01:15,926 INFO [com.opensourceteams.module.google.speech.to.text.simple.stream.recoginizeFIle.RunCN] - 开始
 Transcript : 早饭吃西红柿炒鸡蛋
-2019-04-01 10:01:19,278 INFO [com.opensourceteams.module.google.speech.to.text.simple.streamingRecognizeFile.RunCN] - 结束
+2019-04-01 10:01:19,278 INFO [com.opensourceteams.module.google.speech.to.text.simple.stream.recoginizeFIle.RunCN] - 结束
 
 ```
