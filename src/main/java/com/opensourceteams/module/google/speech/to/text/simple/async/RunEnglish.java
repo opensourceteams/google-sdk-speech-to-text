@@ -21,6 +21,7 @@ public class RunEnglish {
     static Logger logger = Logger.getLogger(RunEnglish.class);
     public static void main(String[] args) throws Exception {
         logger.info("开始");
+        //10MB 以内
         syncRecognizeFile("data/wav/english/audio.raw");
         logger.info("结束");
 
