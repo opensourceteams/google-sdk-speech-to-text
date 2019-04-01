@@ -6,7 +6,10 @@
 
 - 流式识别（仅限 gRPC）对 gRPC 双向流内提供的音频数据执行识别。流式传输请求专为实时识别（例如从麦克风采集实时音频）而设计。流式识别可以一边采集音频一边提供临时结果，例如实现在用户仍在讲话时显示结果。
 
+
+
 ## Java 流式和非流式语音识别示例(官网示例)
+- https://github.com/GoogleCloudPlatform/java-docs-samples
 - https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/speech
 
 ### google speech-to-text
@@ -34,3 +37,9 @@
 
 ### google 通过流的方式发送语音(直接用电脑上的麦克风说话)
 - https://github.com/opensourceteams/google-sdk-speech-to-text/blob/master/md/speech-text-micsteam.md
+
+### google 语音转文本(多轨支持)
+- https://github.com/opensourceteams/google-sdk-speech-to-text/blob/master/md/speech-text-multiChannel.md
+
+### Google Speech 多语言支持
+- https://github.com/opensourceteams/google-sdk-speech-to-text/blob/master/md/speech-text-multiLanguage.md
