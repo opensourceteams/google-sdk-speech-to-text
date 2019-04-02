@@ -17,11 +17,13 @@
 ## 官网文档
 - https://cloud.google.com/speech-to-text/docs/quickstart-client-libraries#client-libraries-usage-java
 
+
 ## Java 流式和非流式语音识别示例(官网示例)
 - https://github.com/GoogleCloudPlatform/java-docs-samples
 - https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/speech
 
-### google speech-to-text
+
+### google speech-to-text （语言支持）
 - https://github.com/opensourceteams/google-sdk-speech-to-text/blob/master/md/languages.md
 
 ### google 语音转文本(短语音)
