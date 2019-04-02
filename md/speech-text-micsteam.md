@@ -120,5 +120,18 @@ public class RunCN {
 }
 
 
+
+```
+
+
+### 输出结果示例
+```aidl
+2019-04-02 08:11:55,849 INFO [com.opensourceteams.module.google.speech.to.text.simple.stream.micstream.RunCN] - 开始
+请说中文(该模式只支持中文)
+停上说话
+Transcript : 你好你能识别我说的话吗
+Transcript : 我的这个还是表示非常的怀疑
+2019-04-02 08:12:57,039 INFO [com.opensourceteams.module.google.speech.to.text.simple.stream.micstream.RunCN] - 结束
+
 ```
 

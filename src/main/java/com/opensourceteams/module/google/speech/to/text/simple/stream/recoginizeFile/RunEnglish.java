@@ -1,4 +1,4 @@
-package com.opensourceteams.module.google.speech.to.text.simple.stream.recoginizeFIle;
+package com.opensourceteams.module.google.speech.to.text.simple.stream.recoginizeFile;
 
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.BidiStreamingCallable;
@@ -13,16 +13,14 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class RunCNLong {
+public class RunEnglish {
 
-    static Logger logger = Logger.getLogger(RunCNLong.class);
+    static Logger logger = Logger.getLogger(RunEnglish.class);
 
     public static void main(String[] args) throws Exception {
 
         logger.info("开始");
-        //String path = "data/wav/cn/早饭吃西红柿炒鸡蛋.wav" ;//这种方式不支持长语音
-        String path = "/Users/liuwen/Downloads/temp/big/丧心病狂的谷歌语音识别-3分55秒.pcm" ;
-        streamingRecognizeFile(path);
+        streamingRecognizeFile("data/wav/english/audio.raw");
         logger.info("结束");
     }
 
@@ -45,7 +43,7 @@ public class RunCNLong {
             RecognitionConfig recConfig =
                     RecognitionConfig.newBuilder()
                             .setEncoding(RecognitionConfig.AudioEncoding.LINEAR16)
-                            .setLanguageCode("cmn-Hans-CN")
+                            .setLanguageCode("en-US")
                             .setSampleRateHertz(16000)
                             .setModel("default")
                             .build();

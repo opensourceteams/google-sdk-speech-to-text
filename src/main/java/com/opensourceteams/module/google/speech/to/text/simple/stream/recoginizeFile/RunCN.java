@@ -1,4 +1,4 @@
-package com.opensourceteams.module.google.speech.to.text.simple.stream.recoginizeFIle;
+package com.opensourceteams.module.google.speech.to.text.simple.stream.recoginizeFile;
 
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.BidiStreamingCallable;
