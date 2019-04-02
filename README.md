@@ -14,6 +14,9 @@
 ## 识别率超高的在线麦克风语音转文本(免费工具)
 - https://www.speechtexter.com
 
+## 官网文档
+- https://cloud.google.com/speech-to-text/docs/quickstart-client-libraries#client-libraries-usage-java
+
 ## Java 流式和非流式语音识别示例(官网示例)
 - https://github.com/GoogleCloudPlatform/java-docs-samples
 - https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/speech
