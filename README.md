@@ -6,6 +6,10 @@
 
 - 流式识别（仅限 gRPC）对 gRPC 双向流内提供的音频数据执行识别。流式传输请求专为实时识别（例如从麦克风采集实时音频）而设计。流式识别可以一边采集音频一边提供临时结果，例如实现在用户仍在讲话时显示结果。
 
+## 源码
+- https://github.com/opensourceteams/google-sdk-speech-to-text
+
+
 
 ## 识别率超高的在线麦克风语音转文本(免费工具)
 - https://www.speechtexter.com
