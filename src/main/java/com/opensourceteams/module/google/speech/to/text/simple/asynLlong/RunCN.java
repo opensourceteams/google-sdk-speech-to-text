@@ -24,7 +24,8 @@ public class RunCN {
     public static void main(String[] args) throws Exception {
         logger.info("开始");
         //限制10M
-        transcribeSyncLong("data/wav/cn/早饭吃西红柿炒鸡蛋.wav"); //ok
+        //transcribeSyncLong("data/wav/cn/早饭吃西红柿炒鸡蛋.wav"); //ok
+        transcribeSyncLong("/opt/n_001_workspaces/tht/speech-tool/data/wav/中文-51秒-2.wav"); //ok
         //transcribeSyncLong("/Users/liuwen/Downloads/temp/big/丧心病狂的谷歌语音识别-3分55秒.pcm"); //ID_ARGUMENT: Inline audio exceeds duration limit. Please use a GCS URI.
         logger.info("结束");
 

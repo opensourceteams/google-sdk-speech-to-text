@@ -24,7 +24,7 @@ public class RunCNPCM {
         //限制10M
         //transcribeSyncLong("data/wav/cn/早饭吃西红柿炒鸡蛋.wav"); //ok
         //transcribeSyncLong("/Users/liuwen/Downloads/temp/big/丧心病狂的谷歌语音识别-3分55秒.pcm"); //ID_ARGUMENT: Inline audio exceeds duration limit. Please use a GCS URI.
-        transcribeSyncLong("/Users/liuwen/Downloads/temp/1/早饭吃西红柿炒鸡蛋.pcm");
+        transcribeSyncLong("/opt/n_001_workspaces/google/google-sdk-speech-to-text/data/wav/cn/早饭吃西红柿炒鸡蛋.wav");
         logger.info("结束");
 
     }
